@@ -1,0 +1,15 @@
+name: release.yml
+on:
+  pull_request:
+    branches: [ "main" ]
+    changelog:
+    exclude:
+      labels:
+        - ignore-for-release
+    categories:
+      - title: Release Notes
+        labels:
+        
+      - title: Other Changes
+        labels:
+        - "*"
