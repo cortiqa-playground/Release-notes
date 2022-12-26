@@ -16,7 +16,7 @@ jobs:
           node-version: '16'
           check-latest: true
     
-        changelog:
+        CHANGALOG.md:
         exclude:
           labels:
             - ignore-for-release
@@ -27,4 +27,3 @@ jobs:
           - title: Other Changes
             labels:
             - "*"
-            
