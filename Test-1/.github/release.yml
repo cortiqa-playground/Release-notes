@@ -5,7 +5,7 @@ on:
     
 jobs:
   Release-Notes:
-  
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,3 +27,4 @@ jobs:
           - title: Other Changes
             labels:
             - "*"
+            
