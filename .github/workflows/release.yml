@@ -16,7 +16,7 @@ jobs:
           node-version: '16'
           check-latest: true
     
-        changelog:
+        CHANGELOG.md:
         exclude:
           labels:
             - ignore-for-release
