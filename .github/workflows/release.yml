@@ -2,14 +2,26 @@ name: release.yml
 on:
   pull_request:
     branches: [ "main" ]
-    changelog:
-    exclude:
-      labels:
-        - ignore-for-release
-    categories:
-      - title: Release Notes
-        labels:
-        
-      - title: Other Changes
-        labels:
-        - "*"
+    
+jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        uses: actions/setup-node@v3
+        with: 
+          node-version: '16'
+          check-latest: true
+    
+        changelog:
+        exclude:
+          labels:
+            - ignore-for-release
+        categories:
+          - title: Release Notes
+            labels:
+            
+          - title: Other Changes
+            labels:
+            - "*"
