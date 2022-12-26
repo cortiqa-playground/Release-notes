@@ -1,16 +1,15 @@
-changelog:
-  exclude:
-    labels:
-      - ignore-for-release
-  categories:
-    - title: Breaking Changes 🛠
+name: release.yml
+on:
+  pull_request:
+    branches: [ "main" ]
+    changelog:
+    exclude:
       labels:
-        - Semver-Major
-        - breaking-change
-    - title: Exciting New Features 🎉
-      labels:
-        - Semver-Minor
-        - enhancement
-    - title: Other Changes
-      labels:
+        - ignore-for-release
+    categories:
+      - title: Release Notes
+        labels:
+        
+      - title: Other Changes
+        labels:
         - "*"
