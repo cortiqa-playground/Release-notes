@@ -3,7 +3,7 @@ changelog:
     labels:
       - ignore-for-release
     authors:
-      - octocat
+      - Kiran1445
   categories:
     - title: Breaking Changes
       labels:
