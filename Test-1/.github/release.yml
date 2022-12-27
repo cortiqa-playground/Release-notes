@@ -1,12 +1,18 @@
 changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - octocat
   categories:
-    - title: feature
+    - title: Breaking Changes
       labels:
-        - '*'
-      exclude:
-        labels:
-          - breaking-change
-    - title: breaking-change
-      labels:
+        - Sample-Label-1
         - breaking-change
-        
+    - title: Exciting New Features 🎉
+      labels:
+        - Sample-Label-2
+        - Feature
+    - title: Other Changes
+      labels:
+        - "*"
