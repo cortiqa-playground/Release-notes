@@ -3,8 +3,6 @@ name: Release Notes Builder
 on:
   workflow_dispatch:
   
-  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
-  
 jobs:
   code-checkout:
     runs-on: ubuntu-latest
