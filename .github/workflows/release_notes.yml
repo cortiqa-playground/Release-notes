@@ -16,7 +16,7 @@ jobs:
       - name: Call GitHub Release API
         id: releases
         run: |
-          RESPONSE = \
+          echo "RESPONSE = " \
           gh api \
           --method POST \
           -H "Accept: application/vnd.github+json" \
