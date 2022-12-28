@@ -3,7 +3,9 @@ name: Release Notes Builder
 on:
   workflow_dispatch:
 env:
-  GH_TOKEN: "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"
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+###"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"
   
 jobs:
   code-checkout:
