@@ -25,7 +25,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: "jq .[] $RUNNER_TEMP/release_notes.json"
+          cmd: "jq -r .[] $RUNNER_TEMP/release_notes.json"
           multiline: true
       
       - name: Print Steps values
