@@ -2,6 +2,8 @@ name: Release Notes Builder
 
 on:
   workflow_dispatch:
+env:
+  GH_TOKEN: "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"
   
 jobs:
   code-checkout:
@@ -14,6 +16,4 @@ jobs:
         run: |
           gh api \
           -H "Accept: application/vnd.github+json" \
-          /repos/cortiqa-playground/Release-notes/releases
-        env:
-          GH_TOKEN="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"          
+          /repos/cortiqa-playground/Release-notes/releases        
