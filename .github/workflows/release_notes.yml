@@ -16,9 +16,7 @@ jobs:
       - name: Call GitHub Release API
         id: releases
         run: |
-          RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' \ 
-          -f tag_name='v0.1.10'  -f configuration_file_path='.github/release.yml' \
-          /repos/cortiqa-playground/Release-notes/releases/generate-notes);
+          RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10'  -f configuration_file_path='.github/release.yml' /repos/cortiqa-playground/Release-notes/releases/generate-notes);
           
           echo "${RESPONSE}" > release_notes.json ;
           ls -l release_notes.json;
