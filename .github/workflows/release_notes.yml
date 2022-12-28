@@ -27,12 +27,12 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: 'echo ${{ steps.releases.outputs.value }}'
+          cmd: 'echo ${{ steps.releases.outputs.* }}'
           multiline: true
       
       - name: Print Steps values
         run: |
-          echo ${{steps.releases.outputs.value}}
+          echo ${{steps.releases.outputs.RESPONSE}}
           
       - name: Process Release Notes
         run: |
