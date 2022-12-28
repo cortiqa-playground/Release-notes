@@ -28,7 +28,7 @@ jobs:
       
       - name: Print Steps values
         run: |
-          echo ${{env.RESPONSE});
+          echo ${{env.RESPONSE}};
           echo ${{ steps.releases.outputs.* }}
           
       - name: Process Release Notes
