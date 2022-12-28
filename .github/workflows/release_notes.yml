@@ -1,0 +1,17 @@
+name: Release Notes Builder
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  code-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Call GitHub Release API
+        run: |
+          gh api \
+          -H "Accept: application/vnd.github+json" \
+          /repos/cortiqa-playground/Release-notes/releases
+          
