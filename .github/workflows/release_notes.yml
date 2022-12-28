@@ -17,14 +17,14 @@ jobs:
         id: releases
         run: |
           RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10' /repos/cortiqa-playground/Release-notes/releases/generate-notes);
-          echo "RESPONSE=${RESPONSE}" >> $GITHUB_ENV;
+          echo "RESPONSE=${RESPONSE}" > $RUNNER_TEMP/release_notes.json;
           
         
       - name: Install jq processor
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: "echo ${{env.RESPONSE}} | jq .[]"
+          cmd: "jq .[] $RUNNER_TEMP/release_notes.json"
           multiline: true
       
       - name: Print Steps values
