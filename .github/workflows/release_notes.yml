@@ -17,7 +17,7 @@ jobs:
         id: releases
         run: |
           RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10' /repos/cortiqa-playground/Release-notes/releases/generate-notes);
-          echo "Printing: ${RESPONSE}";
+          echo "RESPONSE=${RESPONSE}" >> $GITHUB_ENV;
           
         
       - name: Install jq processor
