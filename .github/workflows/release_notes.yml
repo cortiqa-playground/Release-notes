@@ -16,12 +16,12 @@ jobs:
       - name: Call GitHub Release API
         id: releases
         run: |
-          echo "RESPONSE = " \
+          echo "RESPONSE = ` \
           gh api \
           --method POST \
           -H "Accept: application/vnd.github+json" \
           -f tag_name='v0.1.10' \
-          /repos/cortiqa-playground/Release-notes/releases/generate-notes >> $GITHUB_OUTPUT
+          /repos/cortiqa-playground/Release-notes/releases/generate-notes`" >> $GITHUB_OUTPUT
         
       - name: Install jq processor
         uses: sergeysova/jq-action@v2
