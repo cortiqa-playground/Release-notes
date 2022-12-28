@@ -26,7 +26,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: 'REL_NOTES=echo ${{ steps.release_notes.output.value }} | jq .[]'
+          cmd: 'echo ${{ steps.release_notes.output.value }}'
           multiline: true
           
       - name: Process Release Notes
