@@ -28,15 +28,10 @@ jobs:
         with:
           cmd: "jq .[] release_notes.json -r"
           multiline: true
-      
-      - name: Print Steps values
-        run: |
-          echo ${{env.RESPONSE}};
-          echo ${{ steps.releases.outputs.* }}
-          
+               
       - name: Process Release Notes
         run: |
-          echo "Release notes: ${REL_NOTES}"
-          for keyword in ${REL_NOTES}; do
+          echo "Release notes: ${RESPONSE}"
+          for keyword in ${{ steps.release_list.outputs.value }}; do
             echo "$keyword"
           done
