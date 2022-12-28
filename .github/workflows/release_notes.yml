@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Call GitHub Release API
-        id: release_notes
+        id: releases
         run: |
           gh api \
           --method POST \
@@ -26,7 +26,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: 'echo ${{ steps.release_notes.outputs.value }}'
+          cmd: 'echo ${{ steps.releases.outputs.value }}'
           multiline: true
           
       - name: Process Release Notes
@@ -35,4 +35,3 @@ jobs:
           for keyword in ${REL_NOTES}; do
             echo "$keyword"
           done
-          
