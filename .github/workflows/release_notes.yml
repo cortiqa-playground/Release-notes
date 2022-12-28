@@ -18,4 +18,11 @@ jobs:
         run: |
           gh api \
           -H "Accept: application/vnd.github+json" \
-          /repos/cortiqa-playground/Release-notes/releases        
+          /repos/cortiqa-playground/Release-notes/releases
+        
+      - name: Install jq processor
+        uses: sergeysova/jq-action@v2
+        id: release_list
+        with:
+          cmd: 'echo {{ steps.release_notes.output.value }} | jq . -r'
+          multiline: true
