@@ -24,7 +24,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: "echo ${{env.RESPONSE}} | jq .[] -r"
+          cmd: "echo ${{env.RESPONSE}} | jq .[]"
           multiline: true
       
       - name: Print Steps values
