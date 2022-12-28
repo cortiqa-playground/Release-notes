@@ -28,6 +28,9 @@ jobs:
         with:
           cmd: "jq .body[] release_notes.json -r"
           multiline: true
+      
+      - name: Print the value
+        run: echo ${{steps.release_list.outputs.value}}
                
       - name: Process Release Notes
         run: |
