@@ -16,7 +16,7 @@ jobs:
       - name: Call GitHub Release API
         id: releases
         run: |
-          echo "RESPONSE=`gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10' /repos/cortiqa-playground/Release-notes/releases/generate-notes`" >> $GITHUB_OUTPUT;
+          echo "RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10' /repos/cortiqa-playground/Release-notes/releases/generate-notes)" >> $GITHUB_OUTPUT;
           echo "Printing: $RESPONSE"
         
       - name: Install jq processor
