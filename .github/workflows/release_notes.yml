@@ -19,6 +19,7 @@ jobs:
           gh api \
           --method POST \
           -H "Accept: application/vnd.github+json" \
+          -f target_commitish='main' \
           -f tag_name='v0.1.10'
           /repos/cortiqa-playground/Release-notes/releases
         
