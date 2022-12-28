@@ -28,7 +28,7 @@ jobs:
       
       - name: Print Steps values
         run: |
-          echo ${{steps.releases.outputs.*}}
+          echo ${{ fromJSON(steps.releases.outputs.*) }}
           
       - name: Process Release Notes
         run: |
