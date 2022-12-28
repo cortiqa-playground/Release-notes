@@ -26,11 +26,8 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: "jq . release_notes.json -r"
+          cmd: "jq .body release_notes.json -r"
           multiline: true
-      
-      - name: Print the value
-        run: echo ${{steps.release_list.outputs.value}}
                
       - name: Process Release Notes
         run: |
