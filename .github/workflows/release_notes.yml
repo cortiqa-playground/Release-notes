@@ -19,7 +19,7 @@ jobs:
           gh api \
           --method POST \
           -H "Accept: application/vnd.github+json" \
-          -f tag_name: 'v0.1.10'
+          -f tag_name='v0.1.10'
           /repos/cortiqa-playground/Release-notes/releases
         
       - name: Install jq processor
