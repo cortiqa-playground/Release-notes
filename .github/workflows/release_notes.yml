@@ -16,7 +16,7 @@ jobs:
       - name: Call GitHub Release API
         id: releases
         run: |
-          RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10'  -f configuration_file_path='.github/release.yml' /repos/cortiqa-playground/Release-notes/releases/generate-notes);
+          RESPONSE=$(gh api --method POST -H 'Accept: application/vnd.github+json' -f tag_name='v0.1.10' -f prev_tag_name='v0.1.3' -f configuration_file_path='.github/release.yml' /repos/cortiqa-playground/Release-notes/releases/generate-notes);
           
           echo "${RESPONSE}" > release_notes.json ;
           ls -l release_notes.json;
@@ -26,11 +26,13 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: release_list
         with:
-          cmd: "jq .name release_notes.json -r"
+          cmd: "jq .body release_notes.json -r"
           multiline: true
-               
+              
+      - name: Pre-process Release Notes
+        run: |
+          sed 's/\([.]*\)by @.*/\1/g' release_notes.json > release_notes_processed;
+          
       - name: Process Release Notes
         run: |
-          for keyword in ${{ steps.release_list.outputs.value }}; do
-            echo "$keyword"
-          done
+          cat release_notes_processed
