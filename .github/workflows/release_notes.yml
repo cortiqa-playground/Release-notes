@@ -25,4 +25,5 @@ jobs:
           
       - name: Process Release Notes
         run: |
+          cat release_notes.md;
           cat release_notes_processed.md;
