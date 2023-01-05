@@ -14,8 +14,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: Test run
+        run: echo Hello, world
 
-      - name: Test run
+      - name: Run a multi-line script
         run: |
-          Release notes Testing
+          echo Add other actions to build,
+          echo test, and deploy your project.
