@@ -34,7 +34,7 @@ jobs:
           
       - name: Pre-process Release Notes
         run: |
-          sed 's/\([.]*\)by @.*/\1/g' release_notes.md > release_notes_processed.md;
+          sed 's/\([.]*\)by @.*/\1/g' release_notes_processed.md > release_notes_processed.md;
           cat release_notes_processed.md;
 
       - name: Create a tag
