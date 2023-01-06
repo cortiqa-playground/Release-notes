@@ -28,7 +28,7 @@ jobs:
       - name: Check release file successfully created
         run: |
           cat release_notes.md
-
+          
       - name: Pre-process Release Notes
         run: |
           sed 's/\([.]*\)by @.*/\1/g' release_notes.md > release_notes_processed.md;
