@@ -8,8 +8,8 @@ on:
 
 env:
   RELEASE_TAG_VERSION: 0.2.2
-  token: ${{ secrets.GITHUB_TOKEN }}
-  
+  GH_token: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
