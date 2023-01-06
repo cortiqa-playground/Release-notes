@@ -40,10 +40,8 @@ jobs:
 
       - name: Create a tag
         run: | 
-          gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases
-                
-          echo "${RESPONSE}" > ${{env.RELEASE_NOTES}} ;
-          ls -l ${{env.RELEASE_NOTES}};      
+          gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f commitish="Internal" -F draft=true -F prerelease=true /repos/cortiqa-playground/Release-notes;
+          echo "Tag creation successful"
 
   deploy:
     needs: generate-release-notes
