@@ -16,12 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-  # generate-release-notes:
+  generate-release-notes:
     needs: build
-     # - name: Generate Release notes 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Release notes 
         run: | 
-        RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );
-        <<missing writing to the file>>
+          RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );
+          <<release_notes_processed.md>>
 
       - name: Check release file successfully created
         run: |
@@ -34,10 +36,12 @@ jobs:
 
       - name: Create a tag
         run: | 
-          <<create the tag>>
+          echo "Change this text later to run gh api for release"
 
   deploy:
     needs: generate-release-notes
-    - name: Check if release notes is attached to the release
-    - run : |
-       cat release_notes_processed.md
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if release notes is attached to the release
+      - run : |
+          cat release_notes_processed.md
