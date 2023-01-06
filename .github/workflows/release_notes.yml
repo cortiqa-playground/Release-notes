@@ -30,12 +30,12 @@ jobs:
 
       - name: Check release file successfully created
         run: |
-          cat release_notes_processed.md
+          cat release_notes_processed.md;
           
       - name: Pre-process Release Notes
         run: |
           sed 's/\([.]*\)by @.*/\1/g' release_notes.md > release_notes_processed.md;
-          cat release_notes_processed.md
+          cat release_notes_processed.md;
 
       - name: Create a tag
         run: | 
@@ -47,4 +47,4 @@ jobs:
     steps:
       - name: Check if release notes is attached to the release
         run : |
-          cat release_notes_processed.md
+          cat release_notes_processed.md;
