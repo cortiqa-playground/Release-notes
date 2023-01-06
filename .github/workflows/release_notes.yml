@@ -7,7 +7,9 @@ on:
   workflow_dispatch:
 
 env:
-  RELEASE_TAG_VERSION: 0.1.13
+  RELEASE_TAG_VERSION: "0.2.2"
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  RELEASE_NOTES: release_notes.md
 
 jobs:
   build:
@@ -22,26 +24,29 @@ jobs:
     steps:
       - name: Generate Release notes 
         run: | 
-          RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );
-          <<release_notes_processed.md>>
+          RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );l
+          
+          echo "${RESPONSE}" > ${{env.RELEASE_NOTES}} ;
+          ls -l ${{env.RELEASE_NOTES}};
 
       - name: Check release file successfully created
         run: |
-          cat release_notes.md
+          cat release_notes.md;
           
       - name: Pre-process Release Notes
         run: |
-          sed 's/\([.]*\)by @.*/\1/g' release_notes.md > release_notes_processed.md;
-          cat release_notes_processed.md
+          sed -s 's/\([.]*\)by @.*/\1/g' ${{env.RELEASE_NOTES}};
+          cat ${{env.RELEASE_NOTES}};
 
       - name: Create a tag
         run: | 
-          echo "Change this text later to run gh api for release"
+          gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f commitish="Internal" -F draft=true -F prerelease=true /repos/cortiqa-playground/Release-notes;
+          echo "Tag creation successful"
 
   deploy:
     needs: generate-release-notes
     runs-on: ubuntu-latest
     steps:
       - name: Check if release notes is attached to the release
-      - run : |
-          cat release_notes_processed.md
+        run : |
+          cat ${{env.RELEASE_NOTES}};
