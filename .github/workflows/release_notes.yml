@@ -6,15 +6,15 @@ on:
  
   workflow_dispatch:
 
+env:
+  RELEASE_TAG_VERSION: 0.1.13
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-
-env:
-  RELEASE_TAG_VERSION: 0.1.13
 
   generate-release-notes:
     needs: build
@@ -24,9 +24,9 @@ env:
         <<missing writing to the file>>
 
       - name: Check release file successfully created
-      - run: |
+        run: |
           cat release_notes.md
-    
+
       - name: Pre-process Release Notes
         run: |
           sed 's/\([.]*\)by @.*/\1/g' release_notes.md > release_notes_processed.md;
