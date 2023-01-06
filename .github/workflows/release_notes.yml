@@ -36,7 +36,7 @@ jobs:
       - name: Pre-process Release Notes
         run: |
           sed -s 's/\([.]*\)by @.*/\1/g' ${{env.RELEASE_NOTES}};
-          cat ${{env.RELEASE_NOTES}}.md;
+          cat ${{env.RELEASE_NOTES}};
 
       - name: Create a tag
         run: | 
