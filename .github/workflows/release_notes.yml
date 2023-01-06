@@ -43,5 +43,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if release notes is attached to the release
-      - run : |
+        run : |
           cat release_notes_processed.md
