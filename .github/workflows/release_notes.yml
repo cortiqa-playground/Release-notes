@@ -19,7 +19,7 @@ env:
   generate-release-notes:
     needs: build
       - name: Generate Release notes 
-      - run: | 
+        run: | 
         RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );
         <<missing writing to the file>>
 
