@@ -8,6 +8,7 @@ on:
 
 env:
   RELEASE_TAG_VERSION: 0.2.2
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   build:
