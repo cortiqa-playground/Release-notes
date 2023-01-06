@@ -28,7 +28,7 @@ jobs:
 
       - name: Check release file successfully created
         run: |
-          cat release_notes.md
+          cat release_notes_processed.md
           
       - name: Pre-process Release Notes
         run: |
