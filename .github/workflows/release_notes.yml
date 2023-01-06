@@ -8,7 +8,7 @@ on:
 
 env:
   RELEASE_TAG_VERSION: 0.2.2
-  GH_token: ${{ secrets.GITHUB_TOKEN }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
