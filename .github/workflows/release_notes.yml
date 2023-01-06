@@ -8,7 +8,7 @@ on:
 
 env:
   RELEASE_TAG_VERSION: 0.2.2
-  GH_token: ${{ secrets.GITHUB_TOKEN }}
+  GH_token: release_notes_processed.md
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
       - name: Generate Release notes 
         run: | 
           RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.1.9" -f commitish="Internal" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );
-          <<release_notes_processed.md>>
+          <<GH_token>>
 
       - name: Check release file successfully created
         run: |
