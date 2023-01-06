@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-  generate-release-notes:
+  # generate-release-notes:
     needs: build
      # - name: Generate Release notes 
         run: | 
