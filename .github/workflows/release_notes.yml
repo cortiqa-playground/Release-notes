@@ -42,11 +42,6 @@ jobs:
           gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f commitish="Internal" -F draft=true -F prerelease=true /repos/cortiqa-playground/Release-notes/releases;
           echo "Tag creation successful"
 
-  deploy:
-    needs: generate-release-notes
-    runs-on: ubuntu-latest
-    steps:
       - name: Check if release notes is attached to the release
         run : |
           cat ${{env.RELEASE_NOTES}};
-          
