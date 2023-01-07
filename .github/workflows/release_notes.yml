@@ -45,4 +45,3 @@ jobs:
       - name: Check if release notes is attached to the release
         run : |
           cat ${{env.RELEASE_NOTES}};
-        
