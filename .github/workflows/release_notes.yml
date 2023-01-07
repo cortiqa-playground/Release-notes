@@ -39,7 +39,7 @@ jobs:
 
       - name: Create a tag
         run: | 
-          gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -F draft=false -f body=`cat ${{env.RELEASE_NOTES}` -f commitish="main" -F prerelease=true /repos/cortiqa-playground/Release-notes/releases;
+          gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -F draft=false -f body=`cat ${{env.RELEASE_NOTES}` -f commitish="main" -F prerelease=true /repos/cortiqa-playground/Release-notes/releases
           echo "Tag creation successful"
 
       - name: Check if release notes is attached to the release
