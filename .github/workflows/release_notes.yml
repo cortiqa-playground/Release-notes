@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  RELEASE_TAG_VERSION: "0.2.9"
+  RELEASE_TAG_VERSION: "0.2.11"
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   RELEASE_NOTES: release_notes.md
 
@@ -46,4 +46,3 @@ jobs:
         run : |
           cat ${{env.RELEASE_NOTES}};
 
-          
