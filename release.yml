@@ -1,0 +1,25 @@
+
+changelog:
+      
+  categories:
+    - title: Build
+      labels:
+        - Build
+    - title: Documentation
+      labels:
+        - Documentation
+    - title: Enhancement
+      labels:
+        - Enhancement
+    - title: Feature
+      labels:
+        - Feature
+    - title: Fix
+      labels:
+        - Fix
+    - title: Internal
+      labels:
+        - Internal
+    - title: Refactor
+      labels:
+        - Refactor
