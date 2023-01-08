@@ -1,25 +1,15 @@
-
 changelog:
       
   categories:
-    - title: Build
+    - title: Breaking Changes
       labels:
-        - Build
-    - title: Documentation
+        - Sample-Label-1
+        - breaking-change
+    - title: Exciting New Features 🎉
       labels:
-        - Documentation
-    - title: Enhancement
-      labels:
-        - Enhancement
-    - title: Feature
-      labels:
+        - Sample-Label-2
         - Feature
-    - title: Fix
+    - title: Other Changes
       labels:
-        - Fix
-    - title: Internal
-      labels:
-        - Internal
-    - title: Refactor
-      labels:
-        - Refactor
+        - "*"
+        - breaking-change
