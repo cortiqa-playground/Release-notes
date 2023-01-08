@@ -1,5 +1,4 @@
-
-changelog:
+hangelog:
       
   categories:
     - title: Build
@@ -23,3 +22,4 @@ changelog:
     - title: Refactor
       labels:
         - Refactor
+        - "*"
