@@ -8,7 +8,7 @@ changelog:
         - 'Fix'
     - title: Enhancement
       labels:
-        - '*'
+        - 'Enhancement'
       exclude:
         labels:
           - ignore-for-release
