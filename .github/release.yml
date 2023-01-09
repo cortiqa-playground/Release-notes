@@ -25,4 +25,5 @@ changelog:
           - title: Test Cases
             labels:
               - '*'
-  change-template: '- $TITLE @$AUTHOR (#$NUMBER)' 
+  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+  change-title-escapes: '\<*_&'
