@@ -26,4 +26,4 @@ changelog:
         - 'Refactor'
     - title: Test Cases
       labels:
-        - '*'S
+        - '*'
