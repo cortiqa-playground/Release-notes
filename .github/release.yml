@@ -9,9 +9,9 @@ changelog:
     - title: Enhancement
       labels:
         - 'Enhancement'
-    exclude:
-      labels:
-        - ignore-for-release
+    - exclude:
+        labels:
+          - ignore-for-release
     - title: Build
       labels:
         - 'Build'
