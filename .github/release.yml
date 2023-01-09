@@ -1,6 +1,9 @@
 changelog:
   categories:
-    - title:  Breaking Changes
+    - title: This is the tile for new features
+      labels:
+        - 'Feature'
+    - title: Breaking Changes
       labels:
         - '*'
-        
+
