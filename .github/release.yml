@@ -11,8 +11,7 @@ changelog:
     - title: Enhancement
       labels:
         - 'Enhancement'
-  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-  change-title-escapes: '\<*_&'      
+  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'   
       exclude-labels:
           - title: Build
             labels:
