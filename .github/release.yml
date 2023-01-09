@@ -1,8 +1,9 @@
 changelog:
   categories:
+    - title: Features
+      labels:
+        - 'Feature'
     - title: Breaking Changes
       labels:
         - '*'
-    - title: Features
-      labels:
-        - 'feature'
+
