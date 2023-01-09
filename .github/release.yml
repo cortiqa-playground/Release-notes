@@ -1,5 +1,6 @@
 changelog:
   categories:
+  exclude-contributors:
     - title: This is the tile for new features
       labels:
         - 'Feature'
@@ -25,5 +26,3 @@ changelog:
           - title: Test Cases
             labels:
               - '*'
-  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-  change-title-escapes: '\<*_&'
