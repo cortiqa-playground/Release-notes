@@ -9,8 +9,7 @@ changelog:
     - title: Enhancement
       labels:
         - 'Enhancement'
-      exclude:
-        labels:
+      exclude-labels:
           - title: Build
             labels:
               - 'Build'
