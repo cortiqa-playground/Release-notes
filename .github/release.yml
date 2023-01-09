@@ -12,18 +12,18 @@ changelog:
     - exclude:
         labels:
           - ignore-for-release
-    - title: Build
-      labels:
-        - 'Build'
-    - title: Documentation
-      labels:
-        - 'Documentation'
-    - title: Internal
-      labels:
-        - 'Internal'
-    - title: Refactor
-      lables:
-        - 'Refactor'
-    - title: Test Cases
-      labels:
-        - '*'
+          - title: Build
+            labels:
+              - 'Build'
+          - title: Documentation
+            labels:
+              - 'Documentation'
+          - title: Internal 
+            labels:
+              - 'Internal'
+          - title: Refactor
+            lables:
+              - 'Refactor'
+          - title: Test Cases
+            labels:
+              - '*'
