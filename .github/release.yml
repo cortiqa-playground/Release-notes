@@ -1,6 +1,7 @@
 changelog:
   categories:
   exclude-contributors:
+  - 'Kiran1445'
     - title: This is the tile for new features
       labels:
         - 'Feature'
