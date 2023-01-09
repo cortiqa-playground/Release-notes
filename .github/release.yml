@@ -8,8 +8,7 @@ changelog:
         - 'Fix'
     - title: Enhancement
       labels:
-        - 'Enhancement'
-  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'   
+        - 'Enhancement'  
       exclude-labels:
           - title: Build
             labels:
@@ -26,3 +25,4 @@ changelog:
           - title: Test Cases
             labels:
               - '*'
+  change-template: '- $TITLE @$AUTHOR (#$NUMBER)' 
