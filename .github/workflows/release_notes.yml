@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  RELEASE_TAG_VERSION: "0.3.6"
+  RELEASE_TAG_VERSION: "0.3.7"
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   RELEASE_NOTES: release_notes.md
 
@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Generate Release notes 
         run: | 
-          RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.3.4" -f commitish="main" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );          
+          RESPONSE=$(gh api --method POST -H "Accept: application/vnd.github+json" -f tag_name=${{env.RELEASE_TAG_VERSION}} -f previous_tag_name="0.3.6" -f commitish="main" -f configuration_file_path=".github/release.yml" /repos/cortiqa-playground/Release-notes/releases/generate-notes | jq -r .body );          
           echo "${RESPONSE}" > ${{env.RELEASE_NOTES}} ;
           ls -l ${{env.RELEASE_NOTES}};
 
