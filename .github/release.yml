@@ -1,15 +1,11 @@
 changelog:
       
   categories:
-    - title: Enhancement
-      labels:
-        - Enhancement
-    - title: Exciting New Features
-      labels:
-        - Feature
-    - title: Other Changes
+    - title: New Features
       labels:
         - "*"
-        - Enhancement
+    - title: Enhancement
+      labels:
+        - "*"
              
 
