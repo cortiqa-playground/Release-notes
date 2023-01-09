@@ -1,7 +1,5 @@
 changelog:
   categories:
-  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-  change-title-escapes: '\<*_&'
     - title: This is the tile for new features
       labels:
         - 'Feature'
@@ -11,6 +9,8 @@ changelog:
     - title: Enhancement
       labels:
         - 'Enhancement'
+  change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+  change-title-escapes: '\<*_&'      
       exclude-labels:
           - title: Build
             labels:
