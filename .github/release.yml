@@ -6,15 +6,18 @@ changelog:
     - title: Fixing patches in codebase
       labels:
         - 'Fix'
+    - title: Enhancement
+      labels:
+        - '*'
+      exclude:
+        labels:
+          - ignore-for-release
     - title: Build
       labels:
         - 'Build'
     - title: Documentation
       labels:
         - 'Documentation'
-    - title: Enhancement
-      labels:
-        - 'Enhancement'
     - title: Internal
       labels:
         - 'Internal'
@@ -23,4 +26,4 @@ changelog:
         - 'Refactor'
     - title: Test Cases
       labels:
-        - '*'
+        - '*'S
