@@ -3,7 +3,24 @@ changelog:
     - title: This is the tile for new features
       labels:
         - 'Feature'
-    - title: Breaking Changes
+    - title: Fixing patches in codebase
+      labels:
+        - 'Fix'
+    - title: Build
+      labels:
+        - 'Build'
+    - title: Documentation
+      labels:
+        - 'Documentation'
+    - title: Enhancement
+      labels:
+        - 'Enhancement'
+    - title: Internal
+      labels:
+        - 'Internal'
+    - title: Refactor
+      lables:
+        - 'Refactor'
+    - title: Test Cases
       labels:
         - '*'
-
