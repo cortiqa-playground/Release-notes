@@ -3,10 +3,8 @@ changelog:
   categories:
     - title: New Features
       labels:
-        - "*"
-        - Enhancement
+        - Feature
     - title: Enhancement
       labels:
-        - "*"
-             
-
+        - Enhancement
+              
