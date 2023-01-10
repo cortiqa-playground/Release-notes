@@ -10,7 +10,7 @@ changelog:
       labels:
         - 'Enhancement'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_by @'           
+change-title-escapes: '\<*_@'           
       exclude-labels:
           - title: Build
             labels:
