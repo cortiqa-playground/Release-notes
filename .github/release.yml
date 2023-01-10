@@ -26,4 +26,4 @@ changelog:
             labels:
               - '*'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_@' 
+change-title-escapes: '\<*_by @' 
