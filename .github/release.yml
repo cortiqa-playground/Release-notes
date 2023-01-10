@@ -25,5 +25,5 @@ changelog:
           - title: Test Cases
             labels:
               - '*'
-  exclude-contributors:
-  - 'Kiran1445'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_@' 
