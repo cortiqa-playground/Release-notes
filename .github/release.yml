@@ -9,8 +9,6 @@ changelog:
     - title: Enhancement
       labels:
         - 'Enhancement'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_@'
       exclude-labels:
           - title: Build
             labels:
