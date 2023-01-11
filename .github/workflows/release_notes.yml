@@ -30,7 +30,7 @@ jobs:
 
       - name: Check release file successfully created
         run: |
-          cat release_notes.md;
+          cat ${{env.RELEASE_NOTES}};
           
       - name: Pre-process Release Notes
         run: |
