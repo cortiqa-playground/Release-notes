@@ -23,6 +23,12 @@ jobs:
           flutter-version: '3.7.5'
           channel: 'stable'
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - run: npm install
+      
  #      - name: Install relevant packages
  #       run: |
  #         npm install -g firebase-tools
