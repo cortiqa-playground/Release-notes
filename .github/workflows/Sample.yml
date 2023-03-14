@@ -9,13 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - uses: actions/setup-node@v2
+      - name: Install Java
+        uses: actions/setup-java@v2
         with:
-          node-version: '16'
-          cache: 'npm'
-      - run: npm install
+          distribution: 'zulu'
+          java-version: '11'
+        
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.7.5'
+          channel: 'stable'
+
+      - name: Install relevant packages
+        run: |
+          npm install -g firebase-tools
+          flutter pub get
